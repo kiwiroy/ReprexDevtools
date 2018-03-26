@@ -1,0 +1,14 @@
+Package: ReprexDevtools
+Title: A Reproducbile Example Package
+Version: 0.0.0.1
+Authors@R: person("Roy", "Storey", email = "kiwiroy@users.noreply.github.com", role = c("aut", "cre"))
+Description: Provides an example of the difference between
+    devtools::test() and devtools::check() in RStudio 1.1.442.
+Depends: R (>= 3.4.0)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: usethis
+Suggests: 
+    testthat
+RoxygenNote: 6.0.1
