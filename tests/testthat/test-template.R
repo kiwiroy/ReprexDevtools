@@ -1,3 +1,14 @@
+if("devtools_shims" %in% search()) {
+  pkgload::unload("usethis")
+  setHook(packageEvent("usethis", "onLoad"), function(pkgname, pkgpath) {
+    nsenv <- pkgload:::ns_env(pkgname)
+    impenv <- pkgload:::imports_env(pkgname)
+    pkgload:::unlock_environment(nsenv)
+    pkgload:::unlock_environment(impenv)
+    pkgload:::insert_imports_shims(pkgname)
+  }, "append")
+  library(usethis)
+}
 context("test the ReprexDevtools")
 
 test_that("system.file works", {
